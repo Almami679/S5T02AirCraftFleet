@@ -1,19 +1,13 @@
 server:
-  port: 8110
+  port: 8140
 
 spring:
   application:
-    name: msvc-planes
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/airCraftFleetDb?currentSchema=planes
-    username: root
-    password: Chefwork135731
-  jpa:
-    hibernate:
-      ddl-auto: create
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    name: msvc-ranking
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/airCraftFleetDb
+
   config:
     import: optional:configserver:http://localhost:8888
 
@@ -30,4 +24,3 @@ springdoc:
   swagger-ui:
     path: /swagger-ui/index.html
   override-with-generic-response: false
-

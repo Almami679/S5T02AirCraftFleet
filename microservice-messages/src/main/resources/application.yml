@@ -1,0 +1,33 @@
+server:
+  port: 8130
+
+spring:
+  application:
+    name: msvc-messages
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/airCraftFleetDb
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: aircraftfleet
+    password: chefwork135731
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui/index.html
+  override-with-generic-response: false
